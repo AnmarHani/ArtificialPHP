@@ -27,17 +27,6 @@ class Model{
             $sql = "SELECT * FROM {$this->name} WHERE {$condition};";
         }
         $result = $this->db->query($sql);
-        
-        // $emparray = array();
-        // while($row = $result->setFetchMode(PDO::FETCH_ASSOC))
-        // {
-        //     $emparray[] = $row;
-        // }
-        
-        // $result->fetchAll(PDO::FETCH_ASSOC);
-
-        // $arr2 = json_decode($arr);
-        // echo json_encode(array("data"=>$arr2));
 
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }

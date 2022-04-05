@@ -4,9 +4,7 @@ require_once('../Models/UserModel.php');
 function getAllUsers($request, $response){
     ob_clean();
     ob_start();
-    global $User;
-    // echo $request['name'];
-    // $User->POST(array(1,"'Anm'","'Anm123'"));
+    global $User; //To Use The Model
     $result = $User->GET();
     
     $data = array(
@@ -19,16 +17,16 @@ function getAllUsers($request, $response){
 } 
 function createUser($request, $response){
 
-    global $User;
+    global $User; //To Use The Model
 
-    // echo $request['name'];
+    // echo $request['name']; //To Get The 'name' Input From The Request
     
-    $result = $User->POST(array(2,"'Anm'","'Anm123'"));
+    $result = $User->POST(array(1,"'username'","'password'"));
 
     $data = array(
         "data"=>$result,
-        "mine"=>"Hello", 
-        "tryingInsteadEcho"=>$request['name']
+        "random_string"=>"Hello World", 
+        "print_name"=>$request['name']
     );
 
 
